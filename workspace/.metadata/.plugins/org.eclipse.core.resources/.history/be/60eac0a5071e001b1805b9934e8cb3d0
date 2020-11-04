@@ -1,0 +1,47 @@
+package com.prueba.entities;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.math.BigInteger;
+
+
+/**
+ * The persistent class for the users database table.
+ * 
+ */
+@Entity
+@Table(name="USERS")
+@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
+public class User implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	private String user;
+
+	
+
+	private String password;
+
+
+	public User() {
+	}
+
+	public String getUser() {
+		return this.user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
+
+}
